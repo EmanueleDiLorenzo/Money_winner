@@ -1,11 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package newapp;
 
-import java.io.FileNotFoundException;
+import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -16,8 +11,9 @@ import javax.swing.JOptionPane;
  */
 public class Principal extends javax.swing.JFrame {
 
-    private NewApp newApp = new NewApp();
-    
+    private NewApp myApp = new NewApp();
+    private Set<String> names_teams;
+
     /**
      * Creates new form Principal
      */
@@ -40,6 +36,8 @@ public class Principal extends javax.swing.JFrame {
         lSimulate = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Money winner");
@@ -51,7 +49,7 @@ public class Principal extends javax.swing.JFrame {
         });
 
         jTeam1.setFont(new java.awt.Font("Cantarell", 3, 18)); // NOI18N
-        jTeam1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Juventus", "Roma", "Napoli", "Fiorentina", "Inter ", "Parma", "Torino", "Milan", "Lazio", "Verona", "Atalanta", "Sampdoria", "Udinese", "Genoa", "Cagliari", "Chievo", "Sassuolo", "Catania", "Bologna", "Livorno" }));
+        jTeam1.setForeground(new java.awt.Color(254, 18, 18));
         jTeam1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTeam1ActionPerformed(evt);
@@ -59,9 +57,11 @@ public class Principal extends javax.swing.JFrame {
         });
 
         jTeam2.setFont(new java.awt.Font("Cantarell", 3, 18)); // NOI18N
-        jTeam2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Juventus", "Roma", "Napoli", "Fiorentina", "Inter ", "Parma", "Torino", "Milan", "Lazio", "Verona", "Atalanta", "Sampdoria", "Udinese", "Genoa", "Cagliari", "Chievo", "Sassuolo", "Catania", "Bologna", "Livorno" }));
+        jTeam2.setForeground(new java.awt.Color(8, 1, 1));
 
+        jFight.setBackground(new java.awt.Color(1, 1, 1));
         jFight.setFont(new java.awt.Font("Cantarell", 3, 18)); // NOI18N
+        jFight.setForeground(new java.awt.Color(248, 15, 15));
         jFight.setText("Fight!");
         jFight.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -78,6 +78,10 @@ public class Principal extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Cantarell", 3, 18)); // NOI18N
         jLabel2.setText("vs");
 
+        jLabel3.setText("Team1");
+
+        jLabel4.setText("Team2");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -86,22 +90,28 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lSimulate)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(81, 81, 81))))
+                    .addComponent(jLabel1))
+                .addGap(81, 81, 81))
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(148, 148, 148)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jTeam2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTeam1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(187, 187, 187)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(151, 151, 151)
-                        .addComponent(jFight, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(148, 148, 148)
+                            .addComponent(jTeam2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(187, 187, 187)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(151, 151, 151)
+                            .addComponent(jFight, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGap(48, 48, 48)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jTeam1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -110,11 +120,15 @@ public class Principal extends javax.swing.JFrame {
                 .addGap(23, 23, 23)
                 .addComponent(lSimulate)
                 .addGap(18, 18, 18)
-                .addComponent(jTeam1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTeam1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
-                .addComponent(jTeam2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTeam2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -127,23 +141,27 @@ public class Principal extends javax.swing.JFrame {
 
     private void jTeam1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTeam1ActionPerformed
         // TODO add your handling code here:
-       
+
     }//GEN-LAST:event_jTeam1ActionPerformed
 
     private void jFightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFightActionPerformed
         // TODO add your handling code here:
-        int team1 = jTeam1.getSelectedIndex() + 1;
-        int team2 = jTeam2.getSelectedIndex() + 1;
-        String layout_message = newApp.oracle(team1, team2);
-       
-        JOptionPane.showMessageDialog(null, layout_message, "InfoBox: " + "", JOptionPane.INFORMATION_MESSAGE);
-        
+        String team1 = (String) jTeam1.getSelectedItem(); // ---> +1 for jump the firts line 
+        String team2 = (String) jTeam2.getSelectedItem(); // ---> +1 for jump the first line 
+        String layout_message = myApp.oracle(team1, team2);
+
+        JOptionPane.showMessageDialog(null, layout_message, "forecast: " + "", JOptionPane.INFORMATION_MESSAGE);
+
     }//GEN-LAST:event_jFightActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         try {
             // TODO add your handling code here:
-            newApp.parseFile();
+            names_teams = myApp.parseFile();
+            for (String s : names_teams) {
+                jTeam1.addItem(s);
+                jTeam2.addItem(s);
+            }
         } catch (Exception ex) {
             Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -188,6 +206,8 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton jFight;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JComboBox jTeam1;
     private javax.swing.JComboBox jTeam2;
     private javax.swing.JLabel lSimulate;

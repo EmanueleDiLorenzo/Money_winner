@@ -32,28 +32,36 @@
               <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="lSimulate" min="-2" max="-2" attributes="0"/>
-                  <Group type="102" attributes="0">
-                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
               </Group>
+              <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
           </Group>
           <Group type="102" attributes="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="148" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
+              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="148" max="-2" attributes="0"/>
                           <Component id="jTeam2" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTeam1" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="187" max="-2" attributes="0"/>
+                          <Component id="jLabel2" min="-2" pref="55" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="151" max="-2" attributes="0"/>
+                          <Component id="jFight" min="-2" pref="97" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="187" max="-2" attributes="0"/>
-                      <Component id="jLabel2" min="-2" pref="55" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="151" max="-2" attributes="0"/>
-                      <Component id="jFight" min="-2" pref="97" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="jTeam1" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
                   </Group>
               </Group>
               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -66,11 +74,17 @@
               <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
               <Component id="lSimulate" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="jTeam1" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jTeam1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="8" max="32767" attributes="0"/>
-              <Component id="jTeam2" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jTeam2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -86,29 +100,8 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Cantarell" size="18" style="3"/>
         </Property>
-        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="20">
-            <StringItem index="0" value="Juventus"/>
-            <StringItem index="1" value="Roma"/>
-            <StringItem index="2" value="Napoli"/>
-            <StringItem index="3" value="Fiorentina"/>
-            <StringItem index="4" value="Inter "/>
-            <StringItem index="5" value="Parma"/>
-            <StringItem index="6" value="Torino"/>
-            <StringItem index="7" value="Milan"/>
-            <StringItem index="8" value="Lazio"/>
-            <StringItem index="9" value="Verona"/>
-            <StringItem index="10" value="Atalanta"/>
-            <StringItem index="11" value="Sampdoria"/>
-            <StringItem index="12" value="Udinese"/>
-            <StringItem index="13" value="Genoa"/>
-            <StringItem index="14" value="Cagliari"/>
-            <StringItem index="15" value="Chievo"/>
-            <StringItem index="16" value="Sassuolo"/>
-            <StringItem index="17" value="Catania"/>
-            <StringItem index="18" value="Bologna"/>
-            <StringItem index="19" value="Livorno"/>
-          </StringArray>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="12" green="12" red="fe" type="rgb"/>
         </Property>
       </Properties>
       <Events>
@@ -120,36 +113,24 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Cantarell" size="18" style="3"/>
         </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="1" green="1" red="8" type="rgb"/>
+        </Property>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="20">
-            <StringItem index="0" value="Juventus"/>
-            <StringItem index="1" value="Roma"/>
-            <StringItem index="2" value="Napoli"/>
-            <StringItem index="3" value="Fiorentina"/>
-            <StringItem index="4" value="Inter "/>
-            <StringItem index="5" value="Parma"/>
-            <StringItem index="6" value="Torino"/>
-            <StringItem index="7" value="Milan"/>
-            <StringItem index="8" value="Lazio"/>
-            <StringItem index="9" value="Verona"/>
-            <StringItem index="10" value="Atalanta"/>
-            <StringItem index="11" value="Sampdoria"/>
-            <StringItem index="12" value="Udinese"/>
-            <StringItem index="13" value="Genoa"/>
-            <StringItem index="14" value="Cagliari"/>
-            <StringItem index="15" value="Chievo"/>
-            <StringItem index="16" value="Sassuolo"/>
-            <StringItem index="17" value="Catania"/>
-            <StringItem index="18" value="Bologna"/>
-            <StringItem index="19" value="Livorno"/>
-          </StringArray>
+          <StringArray count="0"/>
         </Property>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="jFight">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="1" green="1" red="1" type="rgb"/>
+        </Property>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Cantarell" size="18" style="3"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="f" green="f" red="f8" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Fight!"/>
       </Properties>
@@ -179,6 +160,16 @@
           <Font name="Cantarell" size="18" style="3"/>
         </Property>
         <Property name="text" type="java.lang.String" value="vs"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel3">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Team1"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel4">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Team2"/>
       </Properties>
     </Component>
   </SubComponents>
